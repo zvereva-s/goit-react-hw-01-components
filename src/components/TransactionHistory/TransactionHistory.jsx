@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import styles from './transactionHistory.module.css';
 
-function TransactionHistory({ data }) {
-  const items = data.map(el => (<tr key={el.id}>
+function TransactionHistory({ items }) {
+  const list = items.map(el => (<tr key={el.id}>
     <th className={styles.type}>{el.type}</th>
     <th className={styles.amount}>{el.amount}</th>
     <th className={styles.currency}>{el.currency}</th>
@@ -18,17 +18,21 @@ function TransactionHistory({ data }) {
         </tr>
       </thead>
       <tbody>
-        {items}
+        {list}
       </tbody>
     </table>
   );
 }
 
 TransactionHistory.propTypes = {
-  id: PropTypes.number,
-  type: PropTypes.string,
-  amount: PropTypes.number,
-  currency: PropTypes.number,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      type: PropTypes.string,
+      amount: PropTypes.number,
+      currency: PropTypes.number,
+    })
+  ),
 };
 
 export default TransactionHistory;

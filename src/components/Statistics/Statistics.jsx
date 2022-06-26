@@ -20,8 +20,9 @@ Statistics.defaultProps = {
   stats: [],
 }
 
-Statistics.prototype = {
-  data: PropTypes.arrayOf(
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,

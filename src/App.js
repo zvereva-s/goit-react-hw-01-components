@@ -18,13 +18,11 @@ export default function App() {
     <div className='container'>
       <Section title="Profile" subtitle="Task №1" >
         <Profile
-          avatar={userData.avatar}
           username={userData.username}
           tag={userData.tag}
           location={userData.location}
-          followers={userData.stats.followers}
-          views={userData.stats.views}
-          likes={userData.stats.likes}
+          avatar={userData.avatar}
+          stats={userData.stats}
         />
       </Section>
 
@@ -37,7 +35,7 @@ export default function App() {
       </Section>
 
       <Section title="Transaction History" subtitle="Task №4" >
-        <TransactionHistory data={transactions} />
+        <TransactionHistory items={transactions} />
       </Section>
     </div>
   );
