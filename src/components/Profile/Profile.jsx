@@ -39,7 +39,7 @@ Profile.propTypes = {
     tag:PropTypes.string.isRequired,
     location:PropTypes.string.isRequired,
     stats:PropTypes.arrayOf(
-      PropTypes.shap({
+      PropTypes.shape({
          followers:PropTypes.number,
          views:PropTypes.number,
          likes:PropTypes.number,
